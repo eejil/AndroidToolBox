@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.util.Log
+import kotlinx.android.synthetic.main.activity_life_cycle.*
 
 class lifeCycle : AppCompatActivity(), lifeCycleFragment.OnFragmentInteractionListener {
 
@@ -33,6 +34,17 @@ class lifeCycle : AppCompatActivity(), lifeCycleFragment.OnFragmentInteractionLi
     fun backHome(v: View) {
         val intent = Intent( this@lifeCycle, HomeActivity::class.java)
         startActivity(intent)
+    }
+
+    fun alternate(v: View) {
+        if(this.frag1.isVisible){
+            supportFragmentManager.beginTransaction().show(this.frag2).commit()
+            supportFragmentManager.beginTransaction().hide(this.frag1).commit()
+        }
+        else{
+            supportFragmentManager.beginTransaction().show(this.frag1).commit()
+            supportFragmentManager.beginTransaction().hide(this.frag2).commit()
+        }
     }
 
 

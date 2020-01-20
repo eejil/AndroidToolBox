@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_life_cycle.*
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.fragment_life_cycle.*
 
 class HomeActivity : AppCompatActivity() {
 
@@ -36,7 +37,5 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_life_cycle);
     }
 
-    fun alternate() {
-        this.frag1.
-    }
+
 }
