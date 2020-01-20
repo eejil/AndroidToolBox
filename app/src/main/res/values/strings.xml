@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">AndroidToolBox</string>
+    <string name="buttonLogin">Valider</string>
+    <string name="cycle_de_vie">Cycle de vie</string>
+    <string name="save">Sauvegarde</string>
+    <string name="permissions">Permissions</string>
+    <string name="webservices">Webservices</string>
+    <string name="username">Identifiant</string>
+    <string name="password">Mot de passe</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Salut la zone !</string>
+
+</resources>
