@@ -7,33 +7,6 @@
     tools:context=".lifeCycle">
 
 
-
-    <fragment
-        android:id="@+id/frag1"
-        android:name="fr.isen.franco.androidtoolbox.lifeCycleFragment"
-        android:layout_width="206dp"
-        android:layout_height="139dp"
-        android:layout_weight="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.282" />
-
-    <fragment
-        android:id="@+id/frag2"
-        android:name="fr.isen.franco.androidtoolbox.lifeCycleFragment"
-        android:layout_width="206dp"
-        android:layout_height="139dp"
-        android:layout_weight="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.748" />
-
     <Button
         android:id="@+id/buttonBack"
         android:layout_width="wrap_content"
@@ -44,5 +17,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="311dp"
+        android:layout_height="131dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

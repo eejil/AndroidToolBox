@@ -9,6 +9,7 @@
     <string name="password">Mot de passe</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Salut la zone !</string>
+    <string name="fragment">Zalut la zone !</string>
+    <string name="fragment2">Et reuh la zone !</string>
 
 </resources>

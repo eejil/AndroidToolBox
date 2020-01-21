@@ -5,14 +5,29 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.util.Log
+import android.widget.FrameLayout
 import kotlinx.android.synthetic.main.activity_life_cycle.*
 
-class lifeCycle : AppCompatActivity(), lifeCycleFragment.OnFragmentInteractionListener {
+
+var visible: Boolean? = null
+
+class lifeCycle : AppCompatActivity(), lifeCycleFragment.OnFragmentInteractionListener, lifeCycleFragmentTwo.OnFragmentInteractionListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("LIFECYCLE", "CREATE de l'activité")
         setContentView(R.layout.activity_life_cycle)
+        if (findViewById<FrameLayout>(R.id.fragment_container) != null) {
+            if (savedInstanceState != null) {
+                return;
+            }
+            val firstFragment = lifeCycleFragment()
+
+            firstFragment.arguments = intent.extras
+
+            supportFragmentManager.beginTransaction()
+                .add(R.id.fragment_container, firstFragment).commit()
+            visible = true;
+        }
     }
 
 
@@ -37,13 +52,27 @@ class lifeCycle : AppCompatActivity(), lifeCycleFragment.OnFragmentInteractionLi
     }
 
     fun alternate(v: View) {
-        if(this.frag1.isVisible){
+        /*if(this.frag1.isVisible){
             supportFragmentManager.beginTransaction().show(this.frag2).commit()
             supportFragmentManager.beginTransaction().hide(this.frag1).commit()
         }
         else{
             supportFragmentManager.beginTransaction().show(this.frag1).commit()
             supportFragmentManager.beginTransaction().hide(this.frag2).commit()
+        }*/
+
+        if(visible == true) {
+            val newFragment = lifeCycleFragmentTwo()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, newFragment).commit()
+            visible = false
+        }
+
+        else if(visible == false) {
+            val newFragment = lifeCycleFragment()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, newFragment).commit()
+            visible = true
         }
     }
 
