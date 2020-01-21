@@ -16,14 +16,8 @@ class lifeCycle : AppCompatActivity(), lifeCycleFragment.OnFragmentInteractionLi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_life_cycle)
-        if (findViewById<FrameLayout>(R.id.fragment_container) != null) {
-            if (savedInstanceState != null) {
-                return;
-            }
+        if (fragment_container != null) {
             val firstFragment = lifeCycleFragment()
-
-            firstFragment.arguments = intent.extras
-
             supportFragmentManager.beginTransaction()
                 .add(R.id.fragment_container, firstFragment).commit()
             visible = true;
@@ -44,11 +38,6 @@ class lifeCycle : AppCompatActivity(), lifeCycleFragment.OnFragmentInteractionLi
     override fun onResume() {
         super.onResume()
         Log.d("LIFECYCLE", "RESUME de l'activité")
-    }
-
-    fun backHome(v: View) {
-        val intent = Intent( this@lifeCycle, HomeActivity::class.java)
-        startActivity(intent)
     }
 
     fun alternate(v: View) {
@@ -74,6 +63,11 @@ class lifeCycle : AppCompatActivity(), lifeCycleFragment.OnFragmentInteractionLi
                 .replace(R.id.fragment_container, newFragment).commit()
             visible = true
         }
+    }
+
+    fun backHome(v: View) {
+        val intent = Intent( this@lifeCycle, HomeActivity::class.java)
+        startActivity(intent)
     }
 
 

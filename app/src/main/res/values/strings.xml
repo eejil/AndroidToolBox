@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">AndroidToolBox</string>
     <string name="buttonLogin">Valider</string>
+    <string name="buttonSend">Envoyer</string>
+    <string name="buttonInfo">Info</string>
     <string name="cycle_de_vie">Cycle de vie</string>
     <string name="save">Sauvegarde</string>
     <string name="permissions">Permissions</string>
@@ -11,5 +13,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="fragment">Zalut la zone !</string>
     <string name="fragment2">Et reuh la zone !</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
