@@ -40,7 +40,8 @@ class HomeActivity : AppCompatActivity() {
     }
 
     fun permissions(v: View) {
-
+        val intent = Intent( this@HomeActivity, InfoActivity::class.java)
+        startActivity(intent)
     }
 
     fun webservices(v: View) {

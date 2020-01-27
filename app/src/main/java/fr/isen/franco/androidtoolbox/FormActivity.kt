@@ -22,6 +22,8 @@ class FormActivity : AppCompatActivity() {
     var textview_date: TextView? = null
     var cal = Calendar.getInstance()
 
+    var age: Int = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +44,7 @@ class FormActivity : AppCompatActivity() {
                 cal.set(Calendar.MONTH, monthOfYear)
                 cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
                 updateDateInView()
+                age = getAge(year, monthOfYear, dayOfMonth)
             }
         }
 
@@ -69,7 +72,7 @@ class FormActivity : AppCompatActivity() {
         }
 
         buttonAlert.setOnClickListener {
-            popUp(formInput,getAge(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH))
+            popUp(formInput,age)
         }
     }
 
@@ -108,7 +111,7 @@ class FormActivity : AppCompatActivity() {
 
             alertDialogBuilder
                 .setTitle("Informations")
-                .setMessage("Nom :" + user.Name + "\nPrenom:" + user.Firstname + "\nDate de naissance:" + user.Birthdate + "\nAge:21")
+                .setMessage("Nom :" + user.Name + "\nPrenom:" + user.Firstname + "\nDate de naissance:" + user.Birthdate + "\nAge: " + age)
 
 
             var alertDialog: AlertDialog = alertDialogBuilder.create()
@@ -133,7 +136,4 @@ class FormActivity : AppCompatActivity() {
         val ageInt = age
         return ageInt
     }
-
-
-
 }
